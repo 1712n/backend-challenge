@@ -1,0 +1,12 @@
+binance:
+  api:
+    base-uri: https://api.binance.com/api/v3
+    configuration:
+      max-memory-size: 16MB
+      timeout:
+        connection: 30s
+        read: 1m
+        write: 1m
+
+order-book:
+  depth: 100 # should work with 1000 as well
