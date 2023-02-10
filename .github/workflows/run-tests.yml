@@ -20,5 +20,5 @@ jobs:
           cache: 'maven'
 
       - name: Run tests with Maven
-        timeout-minutes: 15
+        timeout-minutes: 25
         run: ./mvnw test

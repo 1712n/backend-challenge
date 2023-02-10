@@ -44,7 +44,7 @@ class OrderBookMetricsCalculator(
             }
             .doOnSuccess { log.info { "Volume metrics: $it" } }
             .doOnSuccess { log.info { "Volume metrics done for ${Duration.between(start, Instant.now()).seconds}s" } }
-            .block(Duration.ofMinutes(10))!!
+            .block(Duration.ofMinutes(20))!!
     }
 
     data class VolumeMetrics(val asksAvg: BigDecimal, val bidsAvg: BigDecimal)
