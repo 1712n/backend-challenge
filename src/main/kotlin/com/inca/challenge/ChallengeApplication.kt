@@ -6,8 +6,8 @@ import org.springframework.boot.runApplication
 
 @SpringBootApplication
 @ConfigurationPropertiesScan
-class KotlinChallengeApplication
+class ChallengeApplication
 
 fun main(args: Array<String>) {
-    runApplication<KotlinChallengeApplication>(*args).close()
+    runApplication<ChallengeApplication>(*args).close()
 }

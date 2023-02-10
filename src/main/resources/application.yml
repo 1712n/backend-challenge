@@ -2,7 +2,7 @@ spring:
   main:
     web-application-type: NONE
   application:
-    name: backend-kotlin-challenge
+    name: backend-challenge
 binance:
   api:
     base-url: https://api.binance.com/api/v3

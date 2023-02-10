@@ -5,6 +5,10 @@ Challenge program gives interested individuals a chance to prove themselves and 
 the company & products. Our challenges are extremely independent and will require you to manage 
 your own time and work process.
 
+Required skills:
+- Java/Kotlin programming language
+- understanding of stream and reactive programming approaches
+
 ## Description
 This application requests order books for all Binance symbols (financial instruments)
 and calculates the average volumes for asks and bids.
@@ -19,7 +23,7 @@ We use the following technologies in this application:
 
 This app has a standard structure for Spring Boot:
 - `application.yml` configuration file
-- `KotlinChallengeApplication` application entry point
+- `ChallengeApplication` application entry point
 - Spring configuration in `com.inca.challenge.config` package
 - Binance REST API client and model in `com.inca.challenge.api` package
 - `OrderBookMetricsCalculator` order book metrics calculator job
@@ -53,7 +57,8 @@ Even after fixing the first problem, the calculator is not ready to become a rea
 streaming application as it keeps all the state in memory to compute the average volumes.
 Therefore, as a next step we want you to optimize memory consumption.
 
-Please make minimal changes to the `OrderBookMetricsCalculator` class only.
+Please make minimal changes to the `OrderBookMetricsCalculator` class only. If you prefer
+Java lang, feel free to convert calculator class from Kotlin to Java.
 
 ## What's next
 If you are ready with your branch, create a pull request and wait for review. As soon as

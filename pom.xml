@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.inca.challenge</groupId>
-    <artifactId>backend-kotlin-challenge</artifactId>
+    <artifactId>backend-challenge</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
