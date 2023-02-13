@@ -1,13 +1,12 @@
----
-title: Candidate - <name>
-
----
+#### Name: <Full Name>
+#### Email: <email>
 
 ## Description
-Please include a summary of the changes
-
-## Motivation
-You can include relevant motivation and covering letter
+<!---
+Please include a summary of the changes 
+-->
 
 ## Feedback
-You can include feedback
+<!---
+Optionally you can include challenge feedback
+-->
