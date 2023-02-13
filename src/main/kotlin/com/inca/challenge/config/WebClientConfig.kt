@@ -16,6 +16,7 @@ class WebClientConfig {
     @Bean
     fun httpClient(binanceApiProperties: BinanceApiProperties): HttpClient {
         return HttpClient.create()
+            .proxyWithSystemProperties()
             .option(
                 ChannelOption.CONNECT_TIMEOUT_MILLIS,
                 binanceApiProperties.timeout.connection.toMillis().toInt()

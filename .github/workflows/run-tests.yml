@@ -9,28 +9,6 @@ jobs:
     name: Build and run unit tests
     runs-on: ubuntu-latest
     steps:
-      - name: Install WG
-        run: sudo apt install wireguard
-
-      - name: Setup WG ip
-        run: sudo ip link add dev wg0 type wireguard
-
-      - name: Setup WG ip
-        run: sudo ip address add dev wg0 10.0.0.5 peer ${{ vars.WG_INTERFACE_ADDRESS }}
-
-      - name: Setup WG ip
-        run: |-
-          echo "${{ secrets.WG_INTERFACE_PRIVATE_KEY }}" > privatekey && \
-          sudo wg set wg0 \
-            listen-port ${{ vars.WG_INTERFACE_LISTEN_PORT }} \
-            private-key privatekey \
-            peer ${{ secrets.WG_PEER_PUBLIC_KEY }} \
-            allowed-ips 0.0.0.0/0 \
-            endpoint ${{ vars.WG_PEER_ENDPOINT }}
-
-      - name: Link WG
-        run: sudo ip link set up dev wg0
-
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -42,4 +20,4 @@ jobs:
 
       - name: Run tests with Maven
         timeout-minutes: 30
-        run: ./mvnw test
+        run: ./mvnw test ${{ secrets.SETTINGS }}
