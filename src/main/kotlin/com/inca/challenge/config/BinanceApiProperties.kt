@@ -23,5 +23,6 @@ data class BinanceApiProperties(
     data class OrderBook(
         val depth: Int,
         val infoEndpointTimeout: Duration,
+        val dryRun: Boolean
     )
 }

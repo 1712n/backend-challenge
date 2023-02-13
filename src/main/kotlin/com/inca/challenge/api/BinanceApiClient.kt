@@ -35,8 +35,9 @@ class BinanceApiClient(
         .uri("/exchangeInfo")
         .retrieve()
         .bodyToMono(ExchangeInfoDto::class.java)
-        .doOnNext { log.info { "Retrieved ${it.symbols.size} symbols" } }
         .map { it.symbols }
+        .map { if (binanceApiProperties.orderBook.dryRun) it.subList(0, 10) else it } // pick 10 symbols in dry-run mode
+        .doOnNext { log.info { "Retrieved ${it.size} symbols" } }
         .block(binanceApiProperties.orderBook.infoEndpointTimeout)!!
 
     /**
