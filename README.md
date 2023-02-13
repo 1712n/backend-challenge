@@ -1,6 +1,6 @@
 # Binance order book metrics challenge
 
-## About
+## Overview
 Challenge program gives interested individuals a chance to prove themselves and learn a bit about
 the company & products. Our challenges are extremely independent and will require you to manage 
 your own time and work process.
@@ -15,8 +15,7 @@ and calculates the average volumes for asks and bids.
 
 You can find a short description of order book [here](https://en.wikipedia.org/wiki/Order_book). 
 
-## How it works
-We use the following technologies in this application:
+We use the following technologies:
 - Kotlin lang
 - Spring Boot WebFlux framework
 - Maven for dependency management and build
@@ -29,7 +28,7 @@ This app has a standard structure for Spring Boot:
 - `OrderBookMetricsCalculator` order book metrics calculator job
 - `OrderBookMetricsCalculatorTest` Spring Boot test to start application locally
 
-In `OrderBookMetricsCalculator` job implemented the following algorithm:
+In `OrderBookMetricsCalculator` implemented the following algorithm:
 1. retrieve all symbols and rate limits from Binance API
 2. for all symbols one by one retrieve order books 
 3. calculate the average volume for asks and bids
@@ -37,20 +36,14 @@ In `OrderBookMetricsCalculator` job implemented the following algorithm:
 
 The application works correctly, except for timeout in `OrderBookMetricsCalculator`.
 
-## How to run
-Application only requires the JVM to be installed and can be launched with
-```shell
-./mvnw test
-```
-
-## What to do
-We expect the order book metrics calculator to be improved to fit app timeout and 
+## Problem
+We expect the order book metrics calculator to be improved to fit app timeout and
 reduced memory consumption.
 
-The first problem that it takes too long to retrieve order books one by one. This 
+The first problem that it takes too long to retrieve order books one by one. This
 can be optimized if you make calls in parallel. But be careful to not exceed Binance
-API rate limits. You can find how heavy is every API call in 
-[docs](https://binance-docs.github.io/apidocs/spot/en/#order-book). You can also use 
+API rate limits. You can find how heavy is every API call in
+[docs](https://binance-docs.github.io/apidocs/spot/en/#order-book). You can also use
 `BinanceApiClient#getRateLimits` to track currently available limits.
 
 Even after fixing the first problem, the calculator is not ready to become a real world
@@ -60,6 +53,26 @@ Therefore, as a next step we want you to optimize memory consumption.
 Please make minimal changes to the `OrderBookMetricsCalculator` class only. If you prefer
 Java lang, feel free to convert calculator class from Kotlin to Java.
 
-## What's next
-If you are ready with your branch, create a pull request and wait for review. As soon as
-we get a good enough solution from a candidate, we start the interviewing process.
+## Workflow
+1. Fork this repository
+2. Create GitHub Action secret `PROXY_SETTINGS` with proxy settings, e.q `-DsocksProxyHost=158.69.225.110 -DsocksProxyPort=59166`. You can find free proxies [here](http://free-proxy.cz/en/proxylist/country/all/socks5/ping/all)
+3. Create a Pull Request with all your changes into the `main` branch in your new repository
+4. Make sure the Pull Request `Run tests` check was successful
+5. Assign Pull Request to @alekseypolukeev, we will review your code and get back to you
+
+## Test locally
+Application only requires the JVM to be installed and can be launched with
+```shell
+./mvnw test
+```
+
+For the testing purposes you can decrease the number of handled symbols using dry-run mode:
+```shell
+./mvnw test -Dbinance.api.order-book.dry-run=true
+```
+
+As Binance API can't be accessed from US, you can use any free HTTP/HTTP/SOCKS proxy:
+```shell
+./mvnw test -DsocksProxyHost=158.69.225.110 -DsocksProxyPort=59166
+```
+More options can be found [here](https://docs.oracle.com/javase/7/docs/api/java/net/doc-files/net-properties.html).
