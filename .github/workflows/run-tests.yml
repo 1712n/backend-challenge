@@ -20,6 +20,7 @@ jobs:
 
       - name: Setup WG ip
         run: |-
+          echo "${{ secrets.WG_INTERFACE_PRIVATE_KEY }}" > privatekey && \
           sudo wg set wg0 \
             listen-port ${{ vars.WG_INTERFACE_LISTEN_PORT }} \
             private-key privatekey \
