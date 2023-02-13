@@ -55,10 +55,11 @@ Java lang, feel free to convert calculator class from Kotlin to Java.
 
 ## Workflow
 1. Fork this repository
-2. Create GitHub Action secret `PROXY_SETTINGS` with proxy settings, e.q `-DsocksProxyHost=158.69.225.110 -DsocksProxyPort=59166`. You can find free proxies [here](http://free-proxy.cz/en/proxylist/country/all/socks5/ping/all)
-3. Create a Pull Request with all your changes into the `main` branch in your new repository
-4. Make sure the Pull Request `Run tests` check was successful
-5. Assign Pull Request to @alekseypolukeev, we will review your code and get back to you
+2. From `Actions` menu enable workflows in forked repository
+3. From `Settings` menu create Actions secret `PROXY_SETTINGS` with proxy settings (e.q `-DsocksProxyHost=158.69.225.110 -DsocksProxyPort=59166`). See free proxies [list](http://free-proxy.cz/en/proxylist/country/all/socks5/ping/all)
+4. Create a Pull Request with all your changes into the `main` branch in your new repository
+5. Make sure the Pull Request `Run tests` check was successful
+6. From `Settings` menu add @alekseypolukeev and @iliagon to collaborators, we will review your code and get back to you
 
 ## Test locally
 Application only requires the JVM to be installed and can be launched with
@@ -71,7 +72,7 @@ For the testing purposes you can decrease the number of handled symbols using dr
 ./mvnw test -Dbinance.api.order-book.dry-run=true
 ```
 
-As Binance API can't be accessed from US, you can use any free HTTP/HTTP/SOCKS proxy:
+As Binance API can't be accessed from US (451 Unavailable For Legal Reasons), you can use any free HTTP/HTTP/SOCKS proxy:
 ```shell
 ./mvnw test -DsocksProxyHost=158.69.225.110 -DsocksProxyPort=59166
 ```

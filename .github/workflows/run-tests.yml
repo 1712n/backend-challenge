@@ -19,6 +19,6 @@ jobs:
           distribution: temurin
           cache: maven
 
-      - name: Run tests with Maven
+      - name: Run tests
         timeout-minutes: 30
         run: ./mvnw test ${{ secrets.PROXY_SETTINGS }}
