@@ -20,4 +20,4 @@ jobs:
 
       - name: Run tests with Maven
         timeout-minutes: 30
-        run: ./mvnw test ${{ secrets.SETTINGS }}
+        run: ./mvnw test ${{ secrets.PROXY_SETTINGS }}
