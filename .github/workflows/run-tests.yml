@@ -16,16 +16,16 @@ jobs:
         run: sudo ip link add dev wg0 type wireguard
 
       - name: Setup WG ip
-        run: sudo ip address add dev wg0 10.0.0.5 peer ${{ WG_INTERFACE_ADDRESS }}
+        run: sudo ip address add dev wg0 10.0.0.5 peer ${{ vars.WG_INTERFACE_ADDRESS }}
 
       - name: Setup WG ip
         run: |-
           sudo wg set wg0 \
-            listen-port ${{ env.WG_INTERFACE_LISTEN_PORT }} \
+            listen-port ${{ vars.WG_INTERFACE_LISTEN_PORT }} \
             private-key privatekey \
             peer ${{ secrets.WG_PEER_PUBLIC_KEY }} \
             allowed-ips 0.0.0.0/0 \
-            endpoint ${{ env.WG_PEER_ENDPOINT }}
+            endpoint ${{ vars.WG_PEER_ENDPOINT }}
 
       - name: Link WG
         run: sudo ip link set up dev wg0
