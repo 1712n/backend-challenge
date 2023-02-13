@@ -16,7 +16,7 @@ jobs:
         run: sudo ip link add dev wg0 type wireguard
 
       - name: Setup WG ip
-        run: sudo ip address add dev wg0 10.0.0.5 peer ${{ env.WG_INTERFACE_ADDRESS }}
+        run: sudo ip address add dev wg0 10.0.0.5 peer ${{ WG_INTERFACE_ADDRESS }}
 
       - name: Setup WG ip
         run: |-
