@@ -11,7 +11,7 @@ Please include a summary of the changes
 
 ## Motivation
 <!---
-Optionally you can include your motivation and covering letter
+Optionally you can include your motivation and cover letter
 -->
 
 ## Feedback
