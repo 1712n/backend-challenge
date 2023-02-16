@@ -6,10 +6,10 @@ the company & products. Our challenges are extremely independent and will requir
 
 ### Process
 1. Submit your challenge as described in [Workflow](README.md#workflow).
-1. In case your submission is approved, one of our team members will reach out to set up 30-minute Google Meet call.
-1. Candidates that made it to the final stage will be offered a 3-month full- or part-time contract with specific milestones (goals) to achieve.
+1. In case your submission is approved, one of our team members will reach out to set up 30-minute Google Meet orietnation call. Successful candidates will be offered 1.5 hrs technical interview.
+1. Candidates that made it to the final stage will be offered their first 3-month full- or part-time contract with specific milestones (goals) to achieve.
 
-Required skills:
+### Required skills:
 - Java/Kotlin programming language
 - understanding of stream and reactive programming approaches
 
