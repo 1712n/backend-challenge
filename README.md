@@ -1,9 +1,13 @@
 # Binance order book metrics challenge
 
 ## Overview
-Challenge program gives interested individuals a chance to prove themselves and learn a bit about
-the company & products. Our challenges are extremely independent and will require you to manage 
-your own time and work process.
+[Challenge program](https://github.com/1712n/challenge) gives interested individuals a chance to prove themselves and learn a bit about
+the company & products. Our challenges are extremely independent and will require you to manage your own time and work process.
+
+### Process
+1. Submit your challenge as described in [Workflow](README.md#workflow).
+1. In case your submission is approved, one of our team members will reach out to set up 30-minute Google Meet call.
+1. Candidates that made it to the final stage will be offered a 3-month full- or part-time contract with specific milestones (goals) to achieve.
 
 Required skills:
 - Java/Kotlin programming language
