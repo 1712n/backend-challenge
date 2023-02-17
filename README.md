@@ -9,7 +9,7 @@ the company & products. Our challenges are extremely independent and will requir
 1. In case your submission is approved, one of our team members will reach out to set up 30-minute Google Meet orientation call. Successful candidates will be offered 1.5 hrs technical interview.
 1. Candidates that made it to the final stage will be offered a contract with [Inca Digital](https://inca.digital/).
 
-### Required skills:
+### Required skills
 - Java/Kotlin programming language
 - understanding of stream and reactive programming approaches
 
@@ -42,7 +42,7 @@ The application works correctly, except for timeout in `OrderBookMetricsCalculat
 
 ## Problem
 We expect the order book metrics calculator to be improved to fit app timeout and
-reduced memory consumption.
+reduce memory consumption.
 
 The first problem that it takes too long to retrieve order books one by one. This
 can be optimized if you make calls in parallel. But be careful to not exceed Binance
