@@ -48,7 +48,9 @@ The first problem that it takes too long to retrieve order books one by one. Thi
 can be optimized if you make calls in parallel. But be careful to not exceed Binance
 API rate limits. You can find how heavy is every API call in
 [docs](https://binance-docs.github.io/apidocs/spot/en/#order-book). You can also use
-`BinanceApiClient#getRateLimits` to track currently available limits.
+`BinanceApiClient#getRateLimits` to track currently available limits. In general, you 
+can't rely on it being the only application that uses the Binance API on an instance
+(other applications can use the same IP).
 
 Even after fixing the first problem, the calculator is not ready to become a real world
 streaming application as it keeps all the state in memory to compute the average volumes.
