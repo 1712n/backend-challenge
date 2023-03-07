@@ -19,6 +19,9 @@ jobs:
           distribution: temurin
           cache: maven
 
+      - name: Build
+        run: ./mvnw install -Dmaven.test.skip=true
+
       - name: Run tests
         timeout-minutes: 30
         run: ./mvnw test ${{ secrets.PROXY_SETTINGS }}
