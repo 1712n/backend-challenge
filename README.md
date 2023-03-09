@@ -1,3 +1,5 @@
+# [CHALLENGE IS ARCHIVED]
+
 # Binance order book metrics challenge
 
 ## Overview
